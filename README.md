@@ -1,2 +1,2 @@
 ## BLOG ##
-<picture><img src = "https://github.com/MdAmiruddin/MdAmiruddin.github.io/blob/main/images/blog.gif"></picture>
+<picture><img src = "https://github.com/bruno-1337/bruno-1337.github.io/blob/main/images/profile.gif"></picture>
