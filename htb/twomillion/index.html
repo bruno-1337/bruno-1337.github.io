@@ -171,7 +171,7 @@ body {
 <p><strong>Browsing website:</strong></p>
 <p>After adding the line 10.10.11.221 2million.htb to our hosts file we can see the webpage</p>
 <p><img src="img/websitefirstlook.png" alt=""></p>
-<p>It looks like an old version of the hackthebox website, after trying to interact with the website i tried to create an account and it asks for a invite code</p>
+<p>I noticed that the website was a old version of hackthebox. When I tried to explore it and create an account, it asked me for an invite code.</p>
 <p><strong>Endpoint: </strong>2million.htb/invite</p>
 <p><img src="img/challenge.png" alt=""></p>
 <p>Reading the js file of the page i found the function makeInviteCode()</p>
@@ -204,7 +204,7 @@ body {
 </span><span style="color:#d0d0d0">},</span><span style="color:#d0d0d0;background-color:#151515">
 </span><span style="color:#d0d0d0;background-color:#151515">"hint"</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0;background-color:#151515"> </span><span style="color:#90a959">"Data is encrypted ... We should probbably check the encryption type in order to decrypt it..."</span><span style="color:#d0d0d0;background-color:#151515">
 </span><span style="color:#d0d0d0">}</span></pre></div>
-<p>after decoding the message with <a href="https://gchq.github.io/CyberChef/">CyberChef</a> using the ROT13 Cypher that specified on the JSON respose we get the message:</p>
+<p>after decoding the message with <a href="https://gchq.github.io/CyberChef/">CyberChef</a> using the ROT13 Cypher specified on the JSON respose we get the message:</p>
 <p><strong>In order to generate the invite code, make a POST request to /api/v1/invite/generate</strong></p>
 <p>After making the POST request we are greeted with the reply</p>
 <div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#d0d0d0">{</span><span style="color:#d0d0d0;background-color:#151515">
